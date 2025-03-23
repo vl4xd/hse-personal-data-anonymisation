@@ -220,7 +220,10 @@ class TextPD():
             substr = '*' * (end_indx - start_indx)
             
             self.edited_text = self.edited_text[:start_indx] + substr + self.edited_text[end_indx:]
-    
+            
+        # найдем и заменим адреса электронных почт
+        pattern_mail = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+        self.edited_text = re.sub(pattern_mail, 'mail', self.edited_text)
     
     def do_anonymise(self):
         self.fill_sentences()

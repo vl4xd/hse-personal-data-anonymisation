@@ -46,25 +46,3 @@ def do_anonymise_example_text():
 
 if __name__ == '__main__':
     uvicorn.run("main:app", reload=True)
-
-# text = '''
-# ... - "Так в чем же дело?" - "Не ра-ду-ют".
-# ... И т. д. и т. п. В общем, вся газета
-# ... '''
-
-# text2 = '''Меня зовут Платонов Владислав Алексеевич. Я родился 08.02.2003!
-# Мой номер телефона: +7 982 487 98 02'''
-
-# text_space = '   '
-# textPD = TextPD(text=text2)
-# textPD.fill_sentences()
-# textPD.fill_tokens_starts_ends()
-# textPD.reread_starts_ends()
-# textPD.drop_spaces()
-# textPD.fill_poses()
-# textPD.tokens_poses_to_id()
-# textPD.pad_tokens_poses()
-# textPD.predict_tags_ids()
-# textPD.convert_tags_ids_to_tags()
-# textPD.anonymise_test()
-# print(textPD)

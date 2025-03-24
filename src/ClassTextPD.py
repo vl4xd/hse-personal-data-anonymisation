@@ -26,12 +26,12 @@ class TextPD():
         self.pad_tokens_ids: list[int] = None
         self.pad_poses_ids: list[int] = None
         
-        self.model: Sequential = load_model('src\model.keras') # изменено для fastapi (было model.keras)
+        self.model: Sequential = load_model('src/model.keras') # изменено для fastapi (было model.keras -> src/model.keras)
         
         self.morph = MorphAnalyzer()
         self.known_tokens_poses_tags: dict = None
         
-        with open('src\known_tokens_poses_tags.json', 'r', encoding='utf-8') as file: # изменено для fastapi (было known_tokens_poses_tags.json)
+        with open('src/known_tokens_poses_tags.json', 'r', encoding='utf-8') as file: # изменено для fastapi (было known_tokens_poses_tags.json -> src/known_tokens_poses_tags.json)
             self.known_tokens_poses_tags = json.load(file)
         
         
@@ -238,8 +238,8 @@ class TextPD():
         self.anonymise_test()
     
     def __str__(self):
-        result = f'\nВходной текст: {self.original_text}\n' +\
-                f'Анонимизированный текст: {self.edited_text}\n' +\
+        result = f'\nВходной текст: {self.original_text}\n\n' +\
+                f'Анонимизированный текст: {self.edited_text}\n\n\n' +\
                 f'Разделение на предложения: {self.sentences}\n' +\
                 f'Разделение на токены: {self.tokens}\n' +\
                 f'Индекс слов start: {self.starts}\n' +\

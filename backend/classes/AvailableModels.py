@@ -5,7 +5,8 @@ class AvailableModels:
     
     
     __models = {
-        0: ('SpaCy',SpacyModel)
+        0: ('SpaCy', SpacyModel),
+        1: ('SpaCy Test', SpacyModel)
     }
     
     

@@ -1,10 +1,11 @@
 // import React from 'react';
 import {useCallback, useEffect, useState} from 'react'
-import { Input, Select, SelectProps, Button } from 'antd';
+import { Input, Select, SelectProps, Button, Typography } from 'antd';
 
 import axios from 'axios';
 
 const { TextArea } = Input;
+const { Title } = Typography;
 
 function ManualAnon() {
 
@@ -175,57 +176,85 @@ function ManualAnon() {
 
     return (
         <>
-            <Select
-                size={'middle'}
-                value={defaultModelValue || undefined}
-                onChange={handleModelChange}
-                style={{ width: '100%' }}
-                options={optionsModels}
-                loading={isModelsLoading}
-            />
+            <div style={{marginTop: 10, marginBottom: 10}}>
+                <Title level={5}>
+                    1. Выбирите модель (разные классы сущностей)
+                </Title>
+                <Select
+                    size={'middle'}
+                    value={defaultModelValue || undefined}
+                    onChange={handleModelChange}
+                    style={{ width: '100%' }}
+                    options={optionsModels}
+                    loading={isModelsLoading}
+                />
+            </div>
 
-            <Select
-                mode="multiple"
-                value={defaultLabel}
-                onChange={setDefaultLabels}
-                style={{ width: '100%' }}
-                placeholder="Please select"
-                options={optionsLabels}
-                loading={isLabelsLoading}
-            />
+            <div style={{marginTop: 10, marginBottom: 10}}>
+                <Title level={5}>
+                    2. Выбирите класс(ы) сущностей, которые будут найдены в тексте (пустой выбор = все классы)
+                </Title>
+                <Select
+                    mode="multiple"
+                    value={defaultLabel}
+                    onChange={setDefaultLabels}
+                    style={{ width: '100%' }}
+                    placeholder="Выберите классы сущностей"
+                    options={optionsLabels}
+                    loading={isLabelsLoading}
+                />
+            </div>
 
-            <Select
-                size={'middle'}
-                value={defaultAnonymizerValue || undefined}
-                onChange={handleAnonymizerChange}
-                style={{ width: '100%' }}
-                options={optionsAnonymizers}
-                loading={isAnonymizersLoading}
-            />
-            
-            {
-                needMask && <Input 
-                                showCount
-                                maxLength={30}
-                                value={mask}
-                                onChange={(e) => setMask(e.target.value)}
-                            />
-            }
+            <div style={{marginTop: 10, marginBottom: 10}}>
+                <Title level={5}>
+                    3. Выбирите тип анонимизации
+                </Title>
+                <Select
+                    size={'middle'}
+                    value={defaultAnonymizerValue || undefined}
+                    onChange={handleAnonymizerChange}
+                    style={{ width: '100%' }}
+                    options={optionsAnonymizers}
+                    loading={isAnonymizersLoading}
+                />                
+            </div>
 
-            <TextArea 
-            placeholder="Введите текст для анонимизации"
-            autoSize
-            value={text}
-            onChange={(e) => setText(e.target.value)}/>
+            <div style={{marginTop: 10, marginBottom: 10}}>
+                {
+                        
+                        needMask && <Title level={5}>4. Задайте маску</Title>
+                }
+                {
+                    needMask && <Input 
+                                    showCount
+                                    maxLength={30}
+                                    value={mask}
+                                    onChange={(e) => setMask(e.target.value)}
+                                    placeholder="Введите маску анонимизации"
+                                />
+                }
+            </div>
 
-            <Button
-                type="primary"
-                loading={isPredictionLoading}
-                onClick={predictData}
-                iconPosition="end"
-            >
-            Анонимизировать
-            </Button>
+            <div style={{marginTop: 10, marginBottom: 10}}>
+                <Title level={5}>5. Введите текст</Title>
+
+                <TextArea 
+                placeholder="Введите текст"
+                autoSize
+                value={text}
+                onChange={(e) => setText(e.target.value)}/>
+            </div>
+
+            <div style={{marginTop: 10, marginBottom: 10}}>
+                <Button
+                    type="primary"
+                    loading={isPredictionLoading}
+                    onClick={predictData}
+                    iconPosition="end"
+                >
+                Анонимизировать
+                </Button>
+            </div>
 
             {result && (
                     <div style={{ marginTop: 20 }}>

@@ -92,7 +92,7 @@ const App: React.FC = () => {
         {renderContent()}
       </Content>
       <Footer style={{ textAlign: 'center' }}>
-        ©{new Date().getFullYear()} Created by ...
+        Командный проект ©{new Date().getFullYear()} Платонов Владислав Алексеевич, ПИ21_3
       </Footer>
     </Layout>
   );

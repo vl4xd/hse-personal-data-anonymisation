@@ -178,7 +178,7 @@ function ManualAnon() {
         <>
             <div style={{marginTop: 10, marginBottom: 10}}>
                 <Title level={5}>
-                    1. Выбирите модель (разные классы сущностей)
+                    - Выбирите модель (разные классы сущностей)
                 </Title>
                 <Select
                     size={'middle'}
@@ -192,7 +192,7 @@ function ManualAnon() {
 
             <div style={{marginTop: 10, marginBottom: 10}}>
                 <Title level={5}>
-                    2. Выбирите класс(ы) сущностей, которые будут найдены в тексте (пустой выбор = все классы)
+                    - Выбирите класс(ы) сущностей, которые будут найдены в тексте (пустой выбор = все классы)
                 </Title>
                 <Select
                     mode="multiple"
@@ -207,7 +207,7 @@ function ManualAnon() {
 
             <div style={{marginTop: 10, marginBottom: 10}}>
                 <Title level={5}>
-                    3. Выбирите тип анонимизации
+                    - Выбирите тип анонимизации
                 </Title>
                 <Select
                     size={'middle'}
@@ -222,7 +222,7 @@ function ManualAnon() {
             <div style={{marginTop: 10, marginBottom: 10}}>
                 {
                         
-                        needMask && <Title level={5}>4. Задайте маску</Title>
+                        needMask && <Title level={5}>- Задайте маску</Title>
                 }
                 {
                     needMask && <Input 
@@ -236,7 +236,7 @@ function ManualAnon() {
             </div>
 
             <div style={{marginTop: 10, marginBottom: 10}}>
-                <Title level={5}>5. Введите текст</Title>
+                <Title level={5}>- Введите текст</Title>
 
                 <TextArea 
                 placeholder="Введите текст"

@@ -17,6 +17,8 @@ hse-personal-data-anonymisation/
 
 ## Начало использования:
 
+Требования для запуска веб-приложения: ```Python 1.12.6``` 
+
 Для запуска проекта локально, необходимо совершить действия, описанные ниже:
 
 1. Создайте локальную копию репозитория:
@@ -70,7 +72,7 @@ hse-personal-data-anonymisation/
 
 ### Ветки обучения моделей:
 
-- обучение модели SpaCy - [spacy-model-train](./tree/spacy-model-train)
+- обучение модели SpaCy - [spacy-model-train](https://github.com/vl4xd/hse-personal-data-anonymisation/tree/spacy-model-train)
 
 ## Пример работы веб-приложения:
 

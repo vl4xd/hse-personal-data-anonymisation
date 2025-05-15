@@ -1,12 +1,13 @@
 from classes.Model import Model
 from classes.SpacyModel import SpacyModel
+from classes.SpacyModelNew import SpacyModelNew 
 
 class AvailableModels:
     
     
     __models = {
         0: ('SpaCy', SpacyModel),
-        1: ('SpaCy Test', SpacyModel)
+        1: ('SpaCyNew', SpacyModelNew)
     }
     
     
